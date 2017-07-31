@@ -1,0 +1,2 @@
+# gloves
+CS:GO Gloves
