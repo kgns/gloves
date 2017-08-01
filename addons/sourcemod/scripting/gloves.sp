@@ -35,7 +35,7 @@ public Plugin myinfo =
 	name = "Gloves",
 	author = "kgns - wasdzone",
 	description = "CS:GO Gloves Management",
-	version = "1.0.0",
+	version = "1.0.1",
 	url = "http://www.wasdzone.com"
 };
 
