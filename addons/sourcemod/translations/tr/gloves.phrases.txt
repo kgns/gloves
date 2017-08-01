@@ -22,7 +22,7 @@
 	}
 	"ChooseLanguage"
 	{
-		"tr"	"Skin isimleri için dil seçin:"
+		"tr"	"Eldiven isimleri için dil seçin:"
 	}
 	"DefaultGloves"
 	{

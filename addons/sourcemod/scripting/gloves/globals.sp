@@ -38,6 +38,9 @@ int g_iFloatIncrementPercentage;
 ConVar g_Cvar_EnableFloat;
 int g_iEnableFloat;
 
+ConVar g_Cvar_EnableWorldModel;
+int g_iEnableWorldModel;
+
 int g_iGroup[MAXPLAYERS+1][4];
 int g_iGloves[MAXPLAYERS+1][4];
 float g_fFloatValue[MAXPLAYERS+1][4];
