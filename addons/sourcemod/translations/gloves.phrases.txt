@@ -22,7 +22,7 @@
 	}
 	"ChooseLanguage"
 	{
-		"en"	"Select language for skin names:"
+		"en"	"Select language for glove names:"
 	}
 	"DefaultGloves"
 	{

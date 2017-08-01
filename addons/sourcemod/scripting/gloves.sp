@@ -35,7 +35,7 @@ public Plugin myinfo =
 	name = "Gloves",
 	author = "kgns - wasdzone",
 	description = "CS:GO Gloves Management",
-	version = "1.0.0",
+	version = "1.0.1",
 	url = "http://www.wasdzone.com"
 };
 
@@ -46,8 +46,9 @@ public void OnPluginStart()
 	g_Cvar_DBConnection = CreateConVar("sm_gloves_db_connection", "storage-local", "Database connection name in databases.cfg to use");
 	g_Cvar_TablePrefix = CreateConVar("sm_gloves_table_prefix", "", "Prefix for database table (example: 'xyz_')");
 	g_Cvar_ChatPrefix = CreateConVar("sm_gloves_chat_prefix", "[wasdzone]", "Prefix for chat messages");
-	g_Cvar_EnableFloat = CreateConVar("sm_gloves_enable_float", "1", "Enable/Disable weapon float options");
-	g_Cvar_FloatIncrementSize = CreateConVar("sm_gloves_float_increment_size", "0.05", "Increase/Decrease by value for weapon float");
+	g_Cvar_EnableFloat = CreateConVar("sm_gloves_enable_float", "1", "Enable/Disable gloves float options");
+	g_Cvar_FloatIncrementSize = CreateConVar("sm_gloves_float_increment_size", "0.2", "Increase/Decrease by value for gloves float");
+	g_Cvar_EnableWorldModel = CreateConVar("sm_gloves_enable_world_model", "1", "Enable/Disable gloves to be seen by other living players");
 	
 	AutoExecConfig(true, "gloves");
 	
@@ -81,6 +82,7 @@ public void OnConfigsExecuted()
 	g_iEnableFloat = g_Cvar_EnableFloat.IntValue;
 	g_fFloatIncrementSize = g_Cvar_FloatIncrementSize.FloatValue;
 	g_iFloatIncrementPercentage = RoundFloat(g_fFloatIncrementSize * 100.0);
+	g_iEnableWorldModel = g_Cvar_EnableWorldModel.IntValue;
 	ReadConfig();
 }
 
@@ -158,17 +160,17 @@ public void GivePlayerGloves(int client)
 			{
 				SetEntProp(ent, Prop_Send, "m_iItemDefinitionIndex", g_iGroup[client][playerTeam]);
 				SetEntProp(ent, Prop_Send,  "m_nFallbackPaintKit", g_iGloves[client][playerTeam]);
-			}			
+			}
 			SetEntPropFloat(ent, Prop_Send, "m_flFallbackWear", g_fFloatValue[client][playerTeam]);
 			SetEntPropEnt(ent, Prop_Data, "m_hOwnerEntity", client);
 			SetEntPropEnt(ent, Prop_Data, "m_hParent", client);
-			//SetEntPropEnt(ent, Prop_Data, "m_hMoveParent", client);
+			if(g_iEnableWorldModel) SetEntPropEnt(ent, Prop_Data, "m_hMoveParent", client);
 			SetEntProp(ent, Prop_Send, "m_bInitialized", 1);
 			
 			DispatchSpawn(ent);
 			
 			SetEntPropEnt(client, Prop_Send, "m_hMyWearables", ent);
-			//SetEntProp(client, Prop_Send, "m_nBody", 1);
+			if(g_iEnableWorldModel) SetEntProp(client, Prop_Send, "m_nBody", 1);
 		}
 	}
 }
