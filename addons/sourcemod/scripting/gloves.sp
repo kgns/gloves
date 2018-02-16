@@ -35,7 +35,7 @@ public Plugin myinfo =
 	name = "Gloves",
 	author = "kgns | oyunhost.net",
 	description = "CS:GO Gloves Management",
-	version = "1.0.2",
+	version = "1.0.3",
 	url = "https://www.oyunhost.net"
 };
 
