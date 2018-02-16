@@ -20,6 +20,7 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
 	CreateNative("Gloves_IsClientUsingGloves", Native_IsClientUsingGloves);
 	CreateNative("Gloves_RegisterCustomArms", Native_RegisterCustomArms);
 	CreateNative("Gloves_SetArmsModel", Native_SetArmsModel);
+	CreateNative("Gloves_GetArmsModel", Native_GetArmsModel);
 	return APLRes_Success;
 }
 
@@ -46,4 +47,12 @@ public int Native_SetArmsModel(Handle plugin, int numParams)
 	{
 		SetEntPropString(clientIndex, Prop_Send, "m_szArmsModel", g_CustomArms[clientIndex][playerTeam]);
 	}
+}
+
+public int Native_GetArmsModel(Handle plugin, int numParams)
+{
+	int clientIndex = GetNativeCell(1);
+	int playerTeam = GetClientTeam(clientIndex);
+	int size = GetNativeCell(3);
+	SetNativeString(2, g_CustomArms[clientIndex][playerTeam], size);
 }

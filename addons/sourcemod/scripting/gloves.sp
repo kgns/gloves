@@ -33,10 +33,10 @@
 public Plugin myinfo = 
 {
 	name = "Gloves",
-	author = "kgns - wasdzone",
+	author = "kgns | oyunhost.net",
 	description = "CS:GO Gloves Management",
-	version = "1.0.1",
-	url = "http://www.wasdzone.com"
+	version = "1.0.2",
+	url = "https://www.oyunhost.net"
 };
 
 public void OnPluginStart()
