@@ -18,6 +18,8 @@
 #include <sourcemod>
 #include <sdktools>
 #include <cstrike>
+#undef REQUIRE_PLUGIN
+#include <fnemotes>
 
 #pragma semicolon 1
 #pragma newdecls required
@@ -173,4 +175,9 @@ public void GivePlayerGloves(int client)
 			if(g_iEnableWorldModel) SetEntProp(client, Prop_Send, "m_nBody", 1);
 		}
 	}
+}
+
+public void fnemotes_OnEmote(int client)
+{
+	GivePlayerGloves(client);
 }
