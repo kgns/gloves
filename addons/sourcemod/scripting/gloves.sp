@@ -58,6 +58,10 @@ public void OnPluginStart()
 	RegConsoleCmd("sm_gllang", CommandGloveLang);
 	
 	HookEvent("player_spawn", Event_PlayerSpawn, EventHookMode_Pre);
+	
+	AddCommandListener(ChatListener, "say");
+	AddCommandListener(ChatListener, "say2");
+	AddCommandListener(ChatListener, "say_team");
 }
 
 public void OnConfigsExecuted()
