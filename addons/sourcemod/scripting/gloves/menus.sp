@@ -103,7 +103,7 @@ public Action ResetGlovesTimer(Handle timer, DataPack pack)
 	int clientIndex = pack.ReadCell();
 	int activeWeapon = pack.ReadCell();
 	
-	if(IsClientInGame(clientIndex))
+	if(IsClientInGame(clientIndex) && IsValidEntity(activeWeapon))
 	{
 		SetEntPropEnt(clientIndex, Prop_Send, "m_hActiveWeapon", activeWeapon);
 	}
