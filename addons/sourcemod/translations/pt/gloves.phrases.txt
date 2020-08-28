@@ -2,7 +2,7 @@
 {
 	"GloveMenuTitle"
 	{
-		"pt"	"Menu de Luvas:"
+		"pt"	"Menu de Luvas"
 	}
 	"CT"
 	{
