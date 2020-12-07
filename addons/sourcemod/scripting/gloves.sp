@@ -166,7 +166,7 @@ public void GivePlayerGloves(int client)
 				SetEntProp(ent, Prop_Send,  "m_nFallbackPaintKit", g_iGloves[client][playerTeam]);
 			}
 			SetEntPropFloat(ent, Prop_Send, "m_flFallbackWear", g_fFloatValue[client][playerTeam]);
-			SetEntPropFloat(ent, Prop_Send, "m_nFallbackSeed", GetRandomInt(1, 1000));
+			SetEntProp(ent, Prop_Send, "m_nFallbackSeed", GetRandomInt(1, 1000));
 			SetEntPropEnt(ent, Prop_Data, "m_hOwnerEntity", client);
 			SetEntPropEnt(ent, Prop_Data, "m_hParent", client);
 			if(g_iEnableWorldModel) SetEntPropEnt(ent, Prop_Data, "m_hMoveParent", client);
