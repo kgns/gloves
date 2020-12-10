@@ -1,0 +1,5 @@
+root = true
+
+[addons/sourcemod/configs/gloves/*.cfg]
+indent_style = tab
+tab_width = 4
