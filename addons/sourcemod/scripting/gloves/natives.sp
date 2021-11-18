@@ -56,3 +56,43 @@ public int Native_GetArmsModel(Handle plugin, int numParams)
 	int size = GetNativeCell(3);
 	SetNativeString(2, g_CustomArms[clientIndex][playerTeam], size);
 }
+
+public int Native_SetClientGloves(Handle plugin, int numparams)
+{
+	int client = GetNativeCell(1);
+	char updateFields[128], teamName[4];
+
+	int team = GetNativeCell(4);
+
+	g_iGroup[client][team] = GetNativeCell(2);
+	g_iGloves[client][team] = GetNativeCell(3);
+	if(team == CS_TEAM_T)
+	{
+		teamName = "t";
+	}
+	else if(team == CS_TEAM_CT)
+	{
+		teamName = "ct";
+	}
+	Format(updateFields, sizeof(updateFields), "%s_group = %i, %s_glove = %i", teamName, g_iGroup[client][team], teamName, g_iGloves[client][team]);
+	UpdatePlayerData(client, updateFields);
+	
+	if(team == GetClientTeam(client))
+	{
+		int activeWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+		if(activeWeapon != -1)
+		{
+			SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", -1);
+		}
+		GivePlayerGloves(client);
+		if(activeWeapon != -1)
+		{
+			DataPack dpack;
+			CreateDataTimer(0.1, ResetGlovesTimer, dpack);
+			dpack.WriteCell(client);
+			dpack.WriteCell(activeWeapon);
+		}
+	}
+	
+	return 0;
+}

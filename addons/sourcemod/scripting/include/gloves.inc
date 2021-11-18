@@ -15,3 +15,6 @@ native void Gloves_SetArmsModel(int client, const char[] armsModel);
 
 // returns the registered custom arms model. "" if not set
 native void Gloves_GetArmsModel(int client, char[] armsModel, int size);
+
+// sets gloves to client by group id, glove id and team id
+native void Gloves_SetClientGloves(int client, int groupId, int glove, int team);
