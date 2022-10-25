@@ -318,7 +318,7 @@ public Action FloatTimer(Handle timer, DataPack pack)
 	if(IsClientInGame(clientIndex))
 	{
 		char updateFields[30];
-		char teamName[2];
+		char teamName[3];
 		if(team == CS_TEAM_T)
 		{
 			teamName = "t";
