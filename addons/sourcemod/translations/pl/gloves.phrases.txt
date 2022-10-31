@@ -1,0 +1,39 @@
+"Phrases"
+{
+	"GloveMenuTitle"
+	{
+		"pl"	"Menu Rekawiczek"
+	}
+	"CT"
+	{
+		"pl"	"Antyterrorysta"
+	}
+	"T"
+	{
+		"pl"	"Terrorysta"
+	}
+	"Increase"
+	{
+		"pl"	"Zwieksz o %d%%"
+	}
+	"Decrease"
+	{
+		"pl"	"Zmniejsz o %d%%"
+	}
+	"ChooseLanguage"
+	{
+		"pl"	"Wybierz jezyk dla menu rekawiczek:"
+	}
+	"DefaultGloves"
+	{
+		"pl"	"Podstawowe"
+	}
+	"RandomGloves"
+	{
+		"pl"	"Losowe"
+	}
+	"SetFloat"
+	{
+		"pl"	"Stan rekawiczek: "
+	}
+}
