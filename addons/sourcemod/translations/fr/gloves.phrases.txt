@@ -1,0 +1,39 @@
+"Phrases"
+{
+	"GloveMenuTitle"
+	{
+		"fr"	"Gloves Menu"
+	}
+	"CT"
+	{
+		"fr"	"Anti-terroriste"
+	}
+	"T"
+	{
+		"fr"	"Terroriste"
+	}
+	"Increase"
+	{
+		"fr"	"Augmenté de %d%%"
+	}
+	"Decrease"
+	{
+		"fr"	"Diminué de %d%%"
+	}
+	"ChooseLanguage"
+	{
+		"fr"	"Sélectionnez la langue pour les noms de gants"
+	}
+	"DefaultGloves"
+	{
+		"fr"	"Défaut"
+	}
+	"RandomGloves"
+	{
+		"fr"	"Aléatoire"
+	}
+	"SetFloat"
+	{
+		"fr"	"Condition des gants: "
+	}
+}
